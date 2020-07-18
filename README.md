@@ -1,12 +1,6 @@
 # QZJW-ScoreInquiry
 使用强智教务系统APP API 获取成绩，通过 ServerChan 增量推送到微信
 
-## 运行流程
-### 获取 / 更新 / 插入 token
-* 运行时，优先从数据库中查询 token，并通过Qzapi.is_valid 方法进行有效性核验。
-* 如果 token 无效，通过 Qzapi.get_token 方法重新获取 token，并同步更新数据库中的 token。
-* 如果数据库中没有 token（query_set 返回 None），通过 Qzapi.get_token 方法获取 token，并插入到数据库中
-
 ## 使用方法
 ### 运行 Models.py 创建并初始化数据库结构
 运行 ``Models.py``，将创建出一个名为 ``QZJW.db`` 的 Sqlite3 数据文件。并创建两个表，详细信息如下:
